@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Wishsite</title>
+    <title>WishSite</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,15 +11,8 @@
   </head>
 
   <body>
-    <% if flash.any? %>
-      <div style="background-color:green; color:white">
-        <%= flash[:notice] %>
-      </div>
-      <div style="background-color:red; color:white">
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
-    
+    <%= render "shared/navbar" %>
+    <%= render "shared/flash" %>
     <%= yield %>
   </body>
 </html>

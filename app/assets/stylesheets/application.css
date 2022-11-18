@@ -22,6 +22,9 @@
     background-color: red;
 }
 .field_with_errors textarea, 
-.field_with_errors textarea input[type="text"]{
+.field_with_errors textarea input[type="text"],
+.field_with_errors textarea input[type="email"],
+.field_with_errors textarea input[type="password"]
+{
     border: red solid 1px;
 }
