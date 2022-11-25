@@ -1,7 +1,18 @@
 class WishList < ApplicationRecord
-    validates :title, presence: true           #rails 4之後寫法  
+    acts_as_paranoid
+  
+    # validations
+    validates :title, presence: true
     validates :description, presence: true
-    #vaildatas_presence_of :title #rails 3 之前
+  
     # relationships
     belongs_to :user
+    has_many :comments
+
+    has_many :like_wish_lists
+    has_many :liked_users, through: :like_wish_lists, source: :user
+
+    def liked_by?(u)
+      liked_users.include?(u)
+     end
 end
